@@ -1,0 +1,40 @@
+html {min-height: 95%}
+
+body {
+	font-family: roboto, sans-serif, arial;
+	height: 100%;
+	margin: 0;
+}
+
+header {
+	color: white;
+	background-color: rgb(80, 80, 150);
+	box-shadow: 1px 0 5px black;
+
+	border-top: 2vh solid rgb(50, 50, 100);
+	padding: 1vw;
+}
+
+section {
+	width: 80%;
+	border-radius: 3px;
+}
+
+section h2 {
+	margin-left: 20px;
+}
+
+figure {
+	float: left;
+}
+
+#contentContainer {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	
+	border: 3px solid grey;
+	border-radius: 3px;
+}
