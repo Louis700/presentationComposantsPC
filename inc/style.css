@@ -4,6 +4,7 @@ body {
 	font-family: roboto, sans-serif, arial;
 	height: 100%;
 	margin: 0;
+	padding-bottom: 30px;
 
 	background-color: #e1e2e1;
 }
