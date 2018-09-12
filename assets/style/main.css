@@ -63,17 +63,33 @@ figcaption {
 }
 
 a {
-	
+	outline: none;
+	color: hsl(117, 100%, 41%);
+
+	-webkit-transition: color 0.2s;
+	transition: color 0.2s;
+}
+
+a:hover {
+	color: hsl(117, 100%, 51%);
 }
 
 a:active {
-	border: none;
+	color: hsl(117, 100%, 31%);
 }
 
 .noLinkStyle {
 	text-decoration: none;
 	border: none;
 	outline: none;
+	color: inherit;
+}
+
+.noLinkStyle:hover {
+	color: inherit;
+}
+
+.noLinkStyle:active {
 	color: inherit;
 }
 
