@@ -10,7 +10,6 @@ section:hover {
 }
 
 section p {
-	margin-top: calc(100% / 16);
 }
 
 #solutionSection:hover {

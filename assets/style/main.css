@@ -48,6 +48,7 @@ section h2 {
 }
 
 figure {
+	margin-top: 0;
 	float: left;
 }
 
@@ -55,15 +56,24 @@ figure img {
 	max-width: 15vw;
 }
 
+figcaption {
+	text-align: center;
+	color: rgb(150, 150, 150);
+}
+
 a {
-	text-decoration: none;
-	border: none;
-	outline: none;
-	color: inherit;
+	
 }
 
 a:active {
 	border: none;
+}
+
+.noLinkStyle {
+	text-decoration: none;
+	border: none;
+	outline: none;
+	color: inherit;
 }
 
 .clickable {
