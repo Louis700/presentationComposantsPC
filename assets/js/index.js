@@ -1,21 +1,27 @@
 "use strict";
 
+let evilLink;
 let evilTitle;
 let evilSection;
 
 window.onload = init;
 
 function init() {
+	evilLink = document.getElementById("evilLink");
 	evilTitle = document.getElementById("evilTitle");
 	evilSection = document.getElementById("evilSection");
-
-	evilTitle.insertAdjacentText("beforeend", new Array(10).fill().map(()=>randomChar()).join(""));
-	evilSection.insertAdjacentText("beforeend", new Array(500).fill().map(()=>randomChar()).join(""));
-
-	startEvilBugs();
+	
+	setTimeout(startEvilBugs, 60000);
 }
 
 function startEvilBugs() {
+	evilSection.classList.remove("hidden");
+	evilLink.classList.remove("disabled");
+
+	// fill evilTitle and evilSection by random characters
+	evilTitle.insertAdjacentText("beforeend", new Array(10).fill().map(()=>randomChar()).join(""));
+	evilSection.insertAdjacentText("beforeend", new Array(500).fill().map(()=>randomChar()).join(""));
+
 	displayEvilOpacityBugs();
 	displayEvilContentBugs();
 }
