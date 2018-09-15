@@ -11,7 +11,8 @@ function init() {
 	evilTitle = document.getElementById("evilTitle");
 	evilSection = document.getElementById("evilSection");
 	
-	setTimeout(startEvilBugs, 60000);
+	if(document.cookie.indexOf("isPresentationBugFixed") !== -1)
+		startEvilBugs();
 }
 
 function startEvilBugs() {
