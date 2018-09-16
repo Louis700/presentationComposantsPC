@@ -8,12 +8,14 @@ function init() {
 	hint = document.getElementById("hint");
 
 	if(document.cookie.indexOf("isPresentationBugFixed") === -1) {
+		hint.classList.remove("hidden");
 		hint.addEventListener("click", fixBugMessages);
 		hint.addEventListener("click", ()=> {
 			hint.style.opacity = "0";
 			hint.classList.remove("clickable");
 			hint.removeEventListener("click", fixBugMessages);
-			document.cookie = "isPresentationBugFixed=true";
+
+			setCookie("isPresentationBugFixed", "true", 30, DurationType.MINUTE);
 		});
 	} else {
 		fixBug();	

@@ -99,6 +99,11 @@ a.disabled {
 	cursor: pointer;
 }
 
+.hidden {
+	opacity: 0;
+	cursor: default;
+}	
+
 .contentBlock {
 	margin-top: 20px;
 	width: 80%;
