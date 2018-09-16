@@ -9,7 +9,6 @@ body {
 
 canvas {
 	border-radius: 3px;
-	transition: opacity 2s;
 }
 
 button { 

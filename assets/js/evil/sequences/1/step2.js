@@ -8,6 +8,8 @@ let drawMessageInterval;
 let messageIndex = 0;
 let charIndex = 0;
 
+let alpha = 1;
+
 let messages = [
 	"Fantastique...",
 	"Je comprends pas pourquoi tu as mis autant de temps pour résoudre une énigme aussi triviale...",
@@ -16,10 +18,8 @@ let messages = [
 ];
 
 let isShowingPassIcon = false;
-let isShowingChar = false;
 
 function startSequence1Step2() {
-	canvas.classList.add("hidden");
 	body.removeEventListener("click", startSequence1Step2);
 	currentSequence1Step = Sequence1Step.STEP2;
 
@@ -33,21 +33,19 @@ function startSequence1Step2() {
 	}
 	front1SpritesheetImg.src = "assets/img/sprites/front1.png";
 	setTimeout(() => {
-		canvas.classList.remove("hidden")
-		isShowingChar = true;
+		drawMessageInterval = setInterval(drawNextChar, 30)
 	}, 2000);
-	setTimeout(() => drawMessageInterval = setInterval(drawNextChar, 30), 5000);
-	body.addEventListener("click", nextMessages);
 }
 
 function showSequence1Step2() {
-	if(front1Animation !== undefined && isShowingChar)
+	if(front1Animation !== undefined)
 		front1Animation.draw();
 	if(isShowingPassIcon)
 		drawImage(passIcon, canvas.width - (passIcon.width + 10), canvas.height - (passIcon.height + 10));
 }
 
 function nextMessages() {
+	body.removeEventListener("click", nextMessages);
 	clearInterval(drawMessageInterval);
 	isShowingPassIcon = false;
 	messageBox.innerHTML = "";
@@ -65,6 +63,7 @@ function drawNextChar() {
 	if(charIndex === messages[messageIndex].length) {
 		clearInterval(drawMessageInterval);
 		isShowingPassIcon = true;
+		body.addEventListener("click", nextMessages);
 		return;
 	}
 	messageBox.insertAdjacentText("beforeend", messages[messageIndex][charIndex]);
