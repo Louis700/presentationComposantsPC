@@ -4,6 +4,7 @@ let title;
 let h1;
 let body;
 let canvas;
+let messageBox;
 
 let controllingLoopTimeout;
 
@@ -28,6 +29,7 @@ function init() {
 	}
 
 	initCanvas();
+	initMessageBox();
 	start();
 }
 
@@ -48,12 +50,17 @@ function initCanvas() {
 	
 	// Calculate canvas dimensions
 	if(window.innerHeight < window.innerWidth) {
-		canvas.height = Math.floor(7*window.innerHeight/8);
+		canvas.height = Math.floor(4*window.innerHeight/8);
 		canvas.width = canvas.height*1.618;
 	} else {
 		canvas.width = Math.floor(7*window.innerWidth/8);
 		canvas.height = canvas.width/1.618;
 	}
+}
+
+function initMessageBox() {
+	body.insertAdjacentHTML("beforeend", "<div id='messageBox'></div>");
+	messageBox = document.getElementById("messageBox");
 }
 
 function start() {

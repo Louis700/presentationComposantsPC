@@ -9,8 +9,8 @@ let iterationCount = 0;
 
 function startSequence1Step1() {
 	initIcons();
-	canvas.classList.add("clickable");
-	canvas.addEventListener("click", startSequence1Step2);
+	body.classList.add("clickable");
+	body.addEventListener("click", startSequence1Step2);
 }
 
 function showSequence1Step1() {

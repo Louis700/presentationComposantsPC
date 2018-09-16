@@ -42,9 +42,9 @@ function text(x, y, str, ctx=targetContext) {
 }
 
 function textFitInBox(xBoxLeft, yBoxTop, boxWidth, boxHeight, str, ctx=targetContext) {
-	let boxPos = new SimpleVector(xBoxLeft, yBoxTop);
-	let boxDim = new SimpleVector(boxWidth, boxHeight);
-	let strDim = new SimpleVector();
+	let boxPos = new Vector(xBoxLeft, yBoxTop);
+	let boxDim = new Vector(boxWidth, boxHeight);
+	let strDim = new Vector();
 
 	if(boxDim.x/str.length < boxDim.y)
 		strDim = getFontDimensions((boxDim.x*5/12)/str.length, FONTSIZE_MODE.WIDTH);
@@ -57,7 +57,7 @@ function textFitInBox(xBoxLeft, yBoxTop, boxWidth, boxHeight, str, ctx=targetCon
 }
 
 function getFontDimensions(size, sizeMode) {
-	let fontDim = new SimpleVector();
+	let fontDim = new Vector();
 	
 	if(sizeMode === FONTSIZE_MODE.WIDTH) {
 		fontDim.x = size;
@@ -70,7 +70,7 @@ function getFontDimensions(size, sizeMode) {
 		fontDim.y = getHeightOfChar(size, FONTSIZE_MODE.FONTSIZE);
 	} else
 		return error("The value entered is wrong, it's necessary to know the width, the height or the fontsize to deduce the font dimensions !",
-					 new SimpleVector(1, 1));
+			     new Vector(1, 1));
 
 	return fontDim;
 }

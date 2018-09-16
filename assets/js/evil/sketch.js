@@ -7,7 +7,7 @@ function setup() {
 }
 
 function loop() {
-	background(Color.rgb(110));
+	background(Color.rgb(52));
 	if(currentSequence === Sequence.SEQUENCE1)
 		showSequence1();
 }
