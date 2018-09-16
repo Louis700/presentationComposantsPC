@@ -7,6 +7,8 @@ window.onload = init;
 function init() {
 	hint = document.getElementById("hint");
 
+	cookieAlert();
+
 	if(document.cookie.indexOf("isPresentationBugFixed") === -1) {
 		hint.classList.remove("hidden");
 		hint.addEventListener("click", fixBugMessages);

@@ -11,8 +11,10 @@ function init() {
 	evilTitle = document.getElementById("evilTitle");
 	evilSection = document.getElementById("evilSection");
 	
-	if(document.cookie.indexOf("isPresentationBugFixed") !== -1)
+	if(document.cookie.indexOf("isPresentationBugFixed=true") !== -1)
 		startEvilBugs();
+
+	cookieAlert();
 }
 
 function startEvilBugs() {
