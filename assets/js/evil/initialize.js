@@ -19,8 +19,6 @@ function init() {
 	title.insertAdjacentText("beforeend", new Array(10).fill().map(()=>randomChar()).join(""));
 	h1.insertAdjacentText("beforeend", new Array(10).fill().map(()=>randomChar()).join(""));
 
-	cookieAlert();
-
 	body = document.querySelector("body");
 	let password = prompt("4d 6f 74 20 64 65 20 70 61 73 73 65").toLowerCase();
 
