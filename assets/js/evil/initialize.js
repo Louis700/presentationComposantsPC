@@ -1,5 +1,7 @@
 "use strict";
 
+let title;
+let h1;
 let body;
 let canvas;
 
@@ -8,8 +10,14 @@ let controllingLoopTimeout;
 window.onload = init;
 
 function init() {
+	let title = document.querySelector("title");
+	let h1 = document.querySelector("h1");
 	// pick random title
-	document.querySelector("title").insertAdjacentText("beforeend", new Array(10).fill().map(()=>randomChar()).join(""));
+	title.innerHTML = "";
+	h1.innerHTML = "";
+
+	title.insertAdjacentText("beforeend", new Array(10).fill().map(()=>randomChar()).join(""));
+	h1.insertAdjacentText("beforeend", new Array(10).fill().map(()=>randomChar()).join(""));
 
 	cookieAlert();
 
