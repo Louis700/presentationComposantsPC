@@ -2,7 +2,10 @@
 
 let currentSequence;
 
+let emevilThemeAudio;
+
 function setup() {
+	emevilThemeAudio = document.getElementById("emevilThemeAudio");
 	startSequence1();
 }
 

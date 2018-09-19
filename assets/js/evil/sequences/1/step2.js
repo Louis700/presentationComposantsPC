@@ -35,6 +35,7 @@ function startSequence1Step2() {
 	setTimeout(() => {
 		drawMessageInterval = setInterval(drawNextChar, 30)
 	}, 2000);
+	emevilThemeAudio.play();
 }
 
 function showSequence1Step2() {
