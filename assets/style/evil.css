@@ -43,13 +43,16 @@ button:active {
 	width: 70%;
 	height: 200px;
 
+	color: hsl(0, 0%, 95%);
+
 	font-size: 30px;
-	font-family: roboto;
+	font-family: monospace;
 	text-align: left;
 	
 	border-radius: 3px;
 	border: 3px solid rgb(110, 110, 110);
 }
+
 
 .hidden {
 	opacity: 0;
