@@ -58,7 +58,9 @@ button:active {
 	opacity: 0;
 }
 
-.clickable {
-	cursor: pointer;
+@media only screen and (min-width: 1000px) {
+	.clickable {
+		cursor: pointer;
+	}
 }
 
