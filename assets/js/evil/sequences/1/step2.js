@@ -21,6 +21,7 @@ let isShowingPassIcon = false;
 
 function startSequence1Step2() {
 	body.removeEventListener("click", startSequence1Step2);
+	messageBox.classList.remove("hidden");
 	currentSequence1Step = Sequence1Step.STEP2;
 
 	front1SpritesheetImg = new Image();

@@ -59,7 +59,7 @@ function initCanvas() {
 }
 
 function initMessageBox() {
-	body.insertAdjacentHTML("beforeend", "<div id='messageBox'></div>");
+	body.insertAdjacentHTML("beforeend", "<div id='messageBox' class='hidden'></div>");
 	messageBox = document.getElementById("messageBox");
 }
 
