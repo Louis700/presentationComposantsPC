@@ -13,8 +13,6 @@ function init() {
 	
 	if(document.cookie.indexOf("isPresentationBugFixed=true") !== -1)
 		startEvilBugs();
-
-	cookieAlert();
 }
 
 function startEvilBugs() {
