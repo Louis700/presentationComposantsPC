@@ -14,10 +14,17 @@ let messages = [
 	"Fantastique...",
 	"Je comprends pas pourquoi tu as mis autant de temps pour résoudre une énigme aussi triviale...",
 	"Le jeu a même pas commencé et toi tu galères déjà...",
-	"Mais passons..."
+	"Mais passons...",
+	"Sache que la suite des événements risque de mettre ta réflexion à rude épreuve.",
+	"Cela dit si tu arrives jusqu'à la fin, ta façon de programmer se sera beaucoup améliorée...",
+	"Tel qu'il est, ce site ne peut pas t'apporter grand chose...",
+	"Laisse moi faire quelques modifications...",
+	"Voilà, vas y...",
 ];
 
 let isShowingPassIcon = false;
+
+let isChangementSequencePassed = false;
 
 function startSequence1Step2() {
 	body.removeEventListener("click", startSequence1Step2);
@@ -52,12 +59,12 @@ function nextMessages() {
 	isShowingPassIcon = false;
 	messageBox.innerHTML = "";
 
-	if(messageIndex < messages.length - 1) {
+	if(messageIndex === 7 && !isChangementSequencePassed) {
+		changeWebSite();
+	} else if(messageIndex < messages.length - 1) {
 		messageIndex++;
 		charIndex = 0;
 		drawMessageInterval = setInterval(drawNextChar, 30);
-	} else {
-
 	}
 }
 
@@ -70,4 +77,27 @@ function drawNextChar() {
 	}
 	messageBox.insertAdjacentText("beforeend", messages[messageIndex][charIndex]);
 	charIndex++;
+}
+
+function changeWebSite() {
+	let h1 = document.querySelector("h1");
+	let changingSiteAudio = document.getElementById("changingSiteAudio");
+	
+	emevilThemeAudio.volume = 0.5;
+	setTimeout(() => {
+		h1.classList.add("disturbedRotations")
+		changingSiteAudio.play();
+	}, 2000);
+	setTimeout(() => messageBox.classList.add("disturbedRotations"), 2100);
+
+	setTimeout(() => {
+		changingSiteAudio.pause();
+		emevilThemeAudio.volume = 1;
+		h1.classList.remove("disturbedRotations");
+		messageBox.classList.remove("disturbedRotations");
+	
+		isChangementSequencePassed = true;
+	}, 4000);
+
+	setTimeout(nextMessages, 7000);
 }
