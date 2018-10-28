@@ -100,4 +100,6 @@ function changeWebSite() {
 	}, 4000);
 
 	setTimeout(nextMessages, 7000);
+
+	setCookie("currentHardship", 1, new Time(30, DurationType.DAY));
 }

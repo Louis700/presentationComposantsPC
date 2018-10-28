@@ -26,6 +26,5 @@ class Animation {
 			this.currentLifeSpan = this.lifeSpans[this.currentSpriteIndex];
 		}
 
-		
 	}
 }

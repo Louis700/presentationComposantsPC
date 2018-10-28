@@ -2,6 +2,9 @@
 
 class Color {
 	constructor(a, b=a, c=b, d=1, type=ColorType.RGB) {
+		if(!Enum.instanceOf(type, ColorType))
+			return instanceError("type", "ColorType", new Color(255));
+
 		this.type = type;
 
 		if(this.type === ColorType.RGB) {
@@ -14,8 +17,7 @@ class Color {
 			this.s = b;
 			this.l = c;
 			this.a = d;
-		} else 
-			return ("The type isn't defined !" , new Color(255));
+		}
 	}
 
 	toString() {

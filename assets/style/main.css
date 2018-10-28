@@ -30,17 +30,6 @@ section {
 	border-radius: 3px;
 	
 	box-shadow: 1px 0 6.25px rgba(0, 0, 0, 0.3);
-	background-color: #f5f5f6;
-
-	transition: background-color 0.2s;
-}
-
-section.clickable:hover {
-	background-color: hsl(223, 100%, 95%);
-}
-
-section.clickable:active {
-	background-color: hsl(223, 100%, 90%);
 }
 
 section h2 {
@@ -78,6 +67,24 @@ a:active {
 
 a.disabled {
 	pointer-events: none;
+}
+
+.normalSection {
+	background-color: #f5f5f6;
+	transition: background-color 0.2s;
+}
+
+.normalSection.clickable:hover {
+	background-color: hsl(223, 100%, 95%);
+}
+
+.normalSection.clickable:active {
+	background-color: hsl(223, 100%, 90%);
+}
+
+.hardshipSection {
+	color: white;
+	background-color: rgb(52, 150, 52);
 }
 
 .noLinkStyle {

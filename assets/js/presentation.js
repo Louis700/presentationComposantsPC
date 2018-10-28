@@ -7,7 +7,9 @@ window.onload = init;
 function init() {
 	hint = document.getElementById("hint");
 
-	if(document.cookie.indexOf("isPresentationBugFixed") === -1) {
+	if(isCookieExists("isPresentationBugFixed")) {
+		fixBug();
+	} else {
 		hint.classList.remove("hidden");
 		hint.addEventListener("click", fixBugMessages);
 		hint.addEventListener("click", ()=> {
@@ -15,10 +17,8 @@ function init() {
 			hint.classList.remove("clickable");
 			hint.removeEventListener("click", fixBugMessages);
 
-			setCookie("isPresentationBugFixed", "true", 30, DurationType.MINUTE);
+			setCookie("isPresentationBugFixed", "true", new Time(30, DurationType.DAY));
 		});
-	} else {
-		fixBug();	
 	}
 }
 

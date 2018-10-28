@@ -11,8 +11,12 @@ function init() {
 	evilTitle = document.getElementById("evilTitle");
 	evilSection = document.getElementById("evilSection");
 	
-	if(document.cookie.indexOf("isPresentationBugFixed=true") !== -1)
+	if(isCookieExists("isPresentationBugFixed=true") && !isCookieExists("currentHardship"))
 		startEvilBugs();
+	else if(isCookieExists("currentHardship")) {
+		evilSection.parentNode.remove();
+		showHardships();
+	}
 }
 
 function startEvilBugs() {
@@ -27,10 +31,20 @@ function startEvilBugs() {
 	displayEvilContentBugs();
 }
 
+function showHardships() {
+	let hardshipSections = document.querySelectorAll(".hardshipSection");
+
+	for(let i = 0; i < hardshipSections.length; i++) {
+		if(getCookie("currentHardship") <= i)
+			hardshipSections[i].classList.remove("disabled");
+		hardshipSections[i].classList.remove("hidden");
+	}
+}
+
 function displayEvilOpacityBugs() {
-	evilSection.style.opacity = "0";
+	evilSection.classList.add("hidden");
 	
-	setTimeout(()=> evilSection.style.opacity = "1", 100);
+	setTimeout(() => evilSection.classList.remove("hidden"), 100);
 	setTimeout(displayEvilOpacityBugs, randomInt(100, 5000));
 }
 
@@ -38,13 +52,12 @@ function displayEvilContentBugs() {
 	let titleContent = new Array(evilTitle.textContent.length).fill().map((x, i) => evilTitle.textContent[i]);
 	let sectionContent = new Array(evilSection.textContent.length).fill().map((x, i) => evilSection.textContent[i]);
 
-	// Replace a random char
+	// Replace a random chars
 	titleContent[randomInt(0, titleContent.length)] = randomChar();
 	sectionContent[randomInt(0, sectionContent.length)] = randomChar();
 
 	evilTitle.innerHTML = "";
 	evilSection.innerHTML = "";
-
 
 	evilTitle.insertAdjacentText("beforeend", titleContent.join(""));
 	evilSection.insertAdjacentText("beforeend", sectionContent.join(""));
