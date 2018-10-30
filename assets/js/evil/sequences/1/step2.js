@@ -19,7 +19,7 @@ let messages = [
 	"Cela dit si tu arrives jusqu'à la fin, ta façon de programmer se sera beaucoup améliorée...",
 	"Tel qu'il est, ce site ne peut pas t'apporter grand chose...",
 	"Laisse moi faire quelques modifications...",
-	"Voilà, vas y...",
+	"Voilà...",
 ];
 
 let isShowingPassIcon = false;
@@ -100,6 +100,7 @@ function changeWebSite() {
 	}, 4000);
 
 	setTimeout(nextMessages, 7000);
+	setTimeout(()=> window.location.href = "index.html", 9000);
 
 	setCookie("currentHardship", 1, new Time(30, DurationType.DAY));
 }

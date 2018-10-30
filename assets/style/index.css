@@ -1,3 +1,16 @@
+#hardshipsSection {
+	background-color: hsl(120, 50%, 85%);
+	transition: background-color 0.2s;
+}
+
+#hardshipsSection:hover {
+	background-color: hsl(120, 50%, 80%);
+}
+
+#hardshipsSection:active {
+	background-color: hsl(120, 50%, 90%);
+}
+
 #evilSection {
 	color: white;
 	background-color: rgb(52, 52, 52);
