@@ -72,6 +72,17 @@ section.hardshipSection.advice:active {
 	transition: filter 20s;
 }
 
+body {
+	transition: background-color 0.2s;
+}
+
+body.dark {
+	background-color: hsl(0, 0%, 50%);
+	filter: brightness(1);
+
+	transition: background-color 20s;
+}
+
 @keyframes hardcoreAnimation {
 	0% {transform: rotate(0deg)}
 	50% {transform: rotate(0deg)}

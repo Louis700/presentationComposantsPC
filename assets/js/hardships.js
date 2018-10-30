@@ -19,6 +19,7 @@ function hardcoreMouseover() {
 	
 	for(let section of otherSections)
 		section.classList.add("dark");
+	document.querySelector("body").classList.add("dark");
 }
 
 function hardcoreMouseout() {
@@ -26,5 +27,7 @@ function hardcoreMouseout() {
 
 	for(let section of otherSections)
 		section.classList.remove("dark");
+
+	document.querySelector("body").classList.remove("dark");
 	this.classList.remove("currentAnimatedHardcore");
 }

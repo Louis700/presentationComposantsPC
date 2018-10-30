@@ -8,8 +8,6 @@ body {
 
 	color : #3C3C3C;
 	background-color: #e1e2e1;
-
-	transition: background-color 1s;
 }
 
 
@@ -21,8 +19,6 @@ header {
 	color: white;
 	background-color: rgb(80, 80, 150);
 	box-shadow: 1px 0 5px black;
-	
-	transition: background-color 1s, border-top 1s;
 }
 
 img {
