@@ -47,7 +47,7 @@ section.hardshipSection.hardcore:hover {
 	background-color: hsl(0, 60%, 55%);
 
 	transition: background-color 20s;
-	animation: hardcoreHoverAnimation 15s linear 0s infinite alternate;
+	animation: hardcoreHoverAnimation 20s linear 0s 1 normal forwards;
 }
 
 
