@@ -1,0 +1,86 @@
+section {
+	transition: background-color 0.2s, filter 1s;
+}	
+
+section.hardshipSection.easy {
+	background-color: hsl(100, 60%, 80%);
+}
+
+section.hardshipSection.easy:hover {
+	background-color: hsl(100, 60%, 75%);
+}
+
+section.hardshipSection.easy:active {
+	background-color: hsl(100, 60%, 85%);
+}
+
+section.hardshipSection.medium {
+	background-color: hsl(60, 60%, 80%);
+}
+
+section.hardshipSection.medium:hover {
+	background-color: hsl(60, 60%, 75%);
+}
+
+section.hardshipSection.medium:active {
+	background-color: hsl(60, 60%, 85%);
+}
+
+section.hardshipSection.hard {
+	background-color: hsl(0, 60%, 80%);
+}
+
+section.hardshipSection.hard:hover {
+	background-color: hsl(0, 60%, 75%);
+}
+
+section.hardshipSection.hard:active {
+	background-color: hsl(0, 60%, 85%);
+}
+
+section.hardshipSection.hardcore {
+	background-color: hsl(0, 60%, 60%);
+	animation: hardcoreAnimation 5s linear 2s infinite normal;
+}
+
+section.hardshipSection.hardcore:hover {
+	background-color: hsl(0, 60%, 55%);
+
+	transition: background-color 20s;
+	animation: hardcoreHoverAnimation 15s linear 0s infinite alternate;
+}
+
+
+section.hardshipSection.hardcore:active {
+	background-color: hsl(0, 60%, 65%);
+}
+
+section.hardshipSection.advice {
+	background-color: hsl(280, 60%, 80%);
+}
+
+section.hardshipSection.advice:hover {
+	background-color: hsl(280, 60%, 75%);
+}
+
+section.hardshipSection.advice:active {
+	background-color: hsl(280, 60%, 85%);
+}
+
+.dark {
+	filter: brightness(0.2);
+	transition: filter 20s;
+}
+
+@keyframes hardcoreAnimation {
+	0% {transform: rotate(0deg)}
+	50% {transform: rotate(0deg)}
+	52% {transform: rotate(1deg)}
+	55% {transform: rotate(1deg)}
+	56% {transform: rotate(0deg)}
+}
+
+@keyframes hardcoreHoverAnimation {
+	from {transform: scale(1)}
+	to {transform: scale(1.1)}
+}

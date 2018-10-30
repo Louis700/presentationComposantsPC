@@ -12,9 +12,6 @@ body {
 	transition: background-color 1s;
 }
 
-body.dark {
-	background-color: rgb(100, 100, 100);
-}
 
 header {
 	border-top: 2vh solid #1f2868;
@@ -26,12 +23,6 @@ header {
 	box-shadow: 1px 0 5px black;
 	
 	transition: background-color 1s, border-top 1s;
-}
-
-header.dark {
-	border-top: 2vh solid rgb(30, 30, 30);
-	background-color: rgb(52, 52, 52);
-	
 }
 
 img {

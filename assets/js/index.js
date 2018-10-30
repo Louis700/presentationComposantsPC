@@ -15,7 +15,7 @@ function init() {
 		startEvilBugs();
 	else if(isCookieExists("currentHardship")) {
 		evilSection.parentNode.remove();
-		showHardships();
+		showHardshipSection();
 	}
 }
 
@@ -31,14 +31,11 @@ function startEvilBugs() {
 	displayEvilContentBugs();
 }
 
-function showHardships() {
-	let hardshipSections = document.querySelectorAll(".hardshipSection");
-
-	for(let i = 0; i < hardshipSections.length; i++) {
-		if(getCookie("currentHardship") <= i)
-			hardshipSections[i].classList.remove("disabled");
-		hardshipSections[i].classList.remove("hidden");
-	}
+function showHardshipSection() {
+	let hardshipsSections = document.getElementById("hardshipsSection");
+	
+	hardshipsSections.classList.remove("disabled");
+	hardshipsSections.classList.remove("hidden");
 }
 
 function displayEvilOpacityBugs() {
